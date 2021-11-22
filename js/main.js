@@ -3,7 +3,7 @@
  * All other JavaScript files are supplementary to this for 
  * organization. 
  * 
- * @author KobaDesu / Koba#1634
+ * @author Kage Longbotham
  * @year 2021
  */
 import {getFullSetName,sets,wannabeSeiso,cardList} from "./cards.js";
