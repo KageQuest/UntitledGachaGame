@@ -1,0 +1,258 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&family=Montserrat:wght@300;400&display=swap');
+/* Font Styles */
+h1,h2,h3,h4,h5,h6,b,strong {
+	font-family: 'Comfortaa', cursive;
+}
+p,a,i,em,button,input {
+	font-family: 'Montserrat', sans-serif;
+}
+.small-text {
+	font-size: small;
+}
+
+/* Global Colours */
+:root {
+	--light-white: #fffefc;
+	--light-aqua: #7fdbff;
+	--light-sky: #00b2ff;
+	--light-crow: #3d3934;
+	--light-crow-rgba: rgba(61,57,52,.75);
+	--light-silver: #dddddd;
+	--light-silver-rgba: rgba(221,221,221,.75);
+	--light-grey: #aaaaaa;
+	--dark-pebble: #333333;
+	--dark-shadow: #373737;
+	--dark-anchor: #42424c;
+	--dark-fossil: #787276;
+	--warning-scarlet: #910d08;
+	--warning-garnet: #5f0a04;
+	--warning-redapple: #a91b0d;
+	--new-bumblebee: #fce206;
+}
+
+/* Global/Body Styles */
+*, :before, :after {
+	box-sizing: border-box;
+}
+html,body {
+	height: 100%;
+}
+body {
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	background-color: var(--light-white);
+}
+hr {
+	width: 70%;
+	border: 0;
+	height: 2px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--light-crow-rgba), rgba(0, 0, 0, 0));
+}
+.hidden {
+	display: none;
+}
+.button {
+	padding: 20px 40px;
+	margin: 1em auto;
+	border-radius: 5px;
+	display: block;
+	border: none;
+	font-size: 1em;
+	cursor: pointer;
+	text-decoration: none;
+	box-shadow: 0 6px var(--light-grey);
+	min-width: 205px;
+	transition: background-color .2s ease-in-out;
+}
+.button:hover {
+	background-color: var(--light-silver);
+}
+.button:active {
+	background-color: var(--light-silver);
+	box-shadow: 0 3px var(--light-grey);
+	transform: translateY(3px);
+}
+
+/* Navbar Styles */
+ul#nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+	background-color:var(--light-aqua);
+}
+ul#nav li {
+	float: right;
+	min-width: 120px;
+	max-height: 45px;
+	height:auto;
+}
+ul#nav li a,ul#nav li p {
+	display: block;
+	color: var(--light-crow);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	margin: 0;
+	transition:background-color .2s ease-in-out;
+}
+ul#nav li a:hover {
+	background-color: var(--light-sky);
+}
+#count {
+	font-weight: bold;
+}
+
+/* Banner/Gacha Styles */
+#bannerBG {
+	padding: 12px 0;
+	background-size: cover;
+	background-position: center;
+	/* We'll add a background img via JS depending on the active set */
+}
+#banner {
+	display: block;
+	margin: 1em auto;
+	max-width: 300px;
+	height: auto;
+}
+#gacha {
+	display: block;
+	margin: 50px auto;
+	border: 0;
+	background-color: transparent;
+}
+#gacha img {
+	max-height: 200px;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.gelatine {
+	animation: gelatine 0.5s 1;
+}
+
+/* Deck/Collection Wrapper Styles */
+.wrapper {
+	position: relative;
+	width: 100%;
+	min-height: 55vh;
+	height: auto;
+}
+.panel {
+	-webkit-transition: left 1s ease-out;
+	-moz-transition: left 1s ease-out;
+	-o-transition: left 1s ease-out;
+	transition: left 1s ease-out;
+	top: 0;
+	position: absolute;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	background: var(--light-aqua);
+}
+.is-anchored #deck {
+	left: 0;
+}
+.is-anchored #collection {
+	left: 100%;
+}
+#deck {
+	left: -100%;
+}
+#collection {
+	left: 0;
+}
+#collection div h2,#collection div h1 {
+	color: var(--light-crow);
+	text-align: center;
+}
+#collection div h1 {
+	text-decoration: underline;
+}
+.cardHolder {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 1em;
+}
+.card {
+	flex: 1 0 500px;
+	margin: 1rem .25em;
+	background: var(--light-white);
+	height: 200px;
+	max-width: 150px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.card-img {
+	height: inherit;
+	z-index: 1;	
+}
+.blackout {
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 2;
+	position: absolute;
+	background-color: var(--light-crow);
+}
+.blackout::before {
+	content: "???";
+	color: var(--light-white);
+	position: inherit;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size:2vw;
+}
+.card h3 {
+	position: absolute;
+	top: -5%;
+	left: 2%;
+	z-index: 2;
+	color: var(--new-bumblebee);
+	font-size: 1.5vw;
+	transform: rotate(-30deg);
+	-webkit-text-stroke: .5px var(--light-crow);
+	text-shadow: 0 0 10px darkgoldenrod;
+}
+
+/* Modal / Settings Menus */
+#modal, #settings-menu {
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%,0);
+	margin: auto;
+	width: 50%;
+	min-width: 300px;
+	height: auto;
+	padding:  15px 50px;
+	text-align: center;
+	background-color: var(--light-crow-rgba);
+	color: var(--light-white);
+	border-radius: 10px;
+}
+#modal-agree {
+	margin-top: 30px;
+}
+#settings-wipe {
+	margin-top: 30px;
+	background-color: var(--warning-scarlet);
+	color: var(--light-white);
+	box-shadow: 0 6px var(--warning-garnet);
+}
+#settings-wipe:hover {
+	background-color: var(--warning-redapple);
+}
+#settings-wipe:active {
+	background-color: var(--warning-redapple);
+	box-shadow: 0 3px var(--warning-garnet);
+	transform: translateY(3px);
+}

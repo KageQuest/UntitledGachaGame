@@ -1,0 +1,50 @@
+/* Global/Body Styles */
+body {
+	background-color: var(--dark-fossil);
+}
+hr {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--light-silver-rgba), rgba(0, 0, 0, 0));
+}
+.button {
+	color: var(--light-white);
+	background-color: var(--dark-anchor);
+	box-shadow: 0 6px var(--dark-shadow);
+}
+.button:hover {
+	background-color: var(--dark-pebble);
+}
+.button:active {
+	background-color: var(--dark-pebble);
+	box-shadow: 0 3px var(--dark-shadow);
+}
+
+/* Navbar Styles */
+ul#nav {
+	background-color:var(--dark-anchor);
+}
+ul#nav li a,ul#nav li p {
+	color: var(--light-white);
+}
+ul#nav li a:hover {
+	background-color: var(--dark-pebble);
+}
+
+/* Deck/Collection Styles */
+.panel {
+	background: var(--dark-anchor);
+}
+#collection div h2,#collection div h1{
+	color: var(--light-white);
+}
+.blackout {
+	background-color: var(--light-white);
+}
+.blackout::before {
+	color: var(--light-crow);
+}
+
+/* Modal / Settings Menus */
+#modal, #settings-menu {
+	background-color: var(--light-silver-rgba);
+	color: var(--light-crow);
+}
