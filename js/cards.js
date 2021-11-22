@@ -2,7 +2,7 @@
  * This file contains every single card, organized into sets and rarity.
  * For most updates, this is the only file that will ever need to be edited.
  * 
- * @author KobaDesu / Koba#1634
+ * @author Kage Longbotham
  * @year 2021
  * @todo I should consider minifying this file for distribution. It will get VERY large as more cards are added.
  */
